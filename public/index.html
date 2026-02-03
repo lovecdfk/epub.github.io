@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPUB Reader - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><i class="fas fa-book-reader"></i> EPUB Reader</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="library.html"><i class="fas fa-book"></i> Library</a></li>
+                <li><a href="upload.html"><i class="fas fa-upload"></i> Upload</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Read EPUB Books Online</h1>
+                <p>Upload your EPUB files and read them directly in your browser. No downloads required!</p>
+                <div class="hero-buttons">
+                    <a href="library.html" class="btn btn-primary">
+                        <i class="fas fa-book-open"></i> Browse Library
+                    </a>
+                    <a href="upload.html" class="btn btn-secondary">
+                        <i class="fas fa-upload"></i> Upload Book
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="EPUB Reader">
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Use Our EPUB Reader?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-upload feature-icon"></i>
+                    <h3>Easy Upload</h3>
+                    <p>Upload EPUB files with a simple drag-and-drop interface</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud feature-icon"></i>
+                    <h3>Cloud Storage</h3>
+                    <p>Your books are stored securely in the cloud</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Read on any device - desktop, tablet, or mobile</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bookmark feature-icon"></i>
+                    <h3>Bookmarks</h3>
+                    <p>Save your reading progress automatically</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-books">
+            <h2>Recently Added Books</h2>
+            <div id="recentBooks" class="book-grid">
+                <!-- Books will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 EPUB Reader. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
