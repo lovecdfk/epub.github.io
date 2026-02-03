@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading - EPUB Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo"><i class="fas fa-book-reader"></i> EPUB Reader</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="library.html"><i class="fas fa-book"></i> Library</a></li>
+                <li><a href="upload.html"><i class="fas fa-upload"></i> Upload</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="reader-container">
+        <div class="reader-toolbar">
+            <button id="prevBtn" class="toolbar-btn" title="Previous Page">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="reader-info">
+                <span id="bookTitleDisplay">Loading...</span>
+                <span id="pageInfo" class="page-info">Page: -- / --</span>
+            </div>
+            
+            <div class="reader-controls">
+                <button id="tocToggle" class="toolbar-btn" title="Table of Contents">
+                    <i class="fas fa-list"></i>
+                </button>
+                <button id="settingsToggle" class="toolbar-btn" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button id="fullscreenBtn" class="toolbar-btn" title="Fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+            
+            <button id="nextBtn" class="toolbar-btn" title="Next Page">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="reader-content">
+            <!-- Table of Contents Sidebar -->
+            <div id="tocSidebar" class="toc-sidebar">
+                <div class="toc-header">
+                    <h3><i class="fas fa-list"></i> Table of Contents</h3>
+                    <button id="tocClose" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="tocList" class="toc-list">
+                    <!-- Table of contents will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Settings Sidebar -->
+            <div id="settingsSidebar" class="settings-sidebar">
+                <div class="settings-header">
+                    <h3><i class="fas fa-cog"></i> Reading Settings</h3>
+                    <button id="settingsClose" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="settings-content">
+                    <div class="setting-group">
+                        <label>Font Size</label>
+                        <div class="font-controls">
+                            <button id="fontSmaller" class="font-btn">A-</button>
+                            <span id="fontSizeDisplay" class="font-size">16px</span>
+                            <button id="fontBigger" class="font-btn">A+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label>Theme</label>
+                        <select id="themeSelect" class="theme-select">
+                            <option value="light">Light</option>
+                            <option value="sepia">Sepia</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label>Font Family</label>
+                        <select id="fontSelect" class="font-select">
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="'Times New Roman', serif">Times New Roman</option>
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="'Helvetica Neue', sans-serif">Helvetica</option>
+                        </select>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <label>Line Height</label>
+                        <input type="range" id="lineHeight" min="1.2" max="2.5" step="0.1" value="1.5">
+                        <span id="lineHeightValue" class="value-display">1.5</span>
+                    </div>
+                    
+                    <button id="resetSettings" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Reset to Default
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Main Reader Area -->
+            <div id="viewer" class="viewer"></div>
+        </div>
+        
+        <div class="reader-footer">
+            <div class="progress-container">
+                <input type="range" id="progressSlider" min="0" max="100" value="0" class="progress-slider">
+            </div>
+            <div class="footer-controls">
+                <button id="bookmarkBtn" class="footer-btn" title="Bookmark Current Page">
+                    <i class="far fa-bookmark"></i> Bookmark
+                </button>
+                <button id="goToPageBtn" class="footer-btn" title="Go to Page">
+                    <i class="fas fa-arrow-right-to-bracket"></i> Go to Page
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="reader.js"></script>
+</body>
+</html>
